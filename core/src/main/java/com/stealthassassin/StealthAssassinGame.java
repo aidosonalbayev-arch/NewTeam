@@ -1,44 +1,32 @@
 package com.stealthassassin;
 
-import com.badlogic.gdx.Game;
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.stealthassassin.screens.MainMenuScreen;
+import com.badlogic.gdx.utils.ScreenUtils;
 
-public class StealthAssassinGame extends Game {
-
-    private static StealthAssassinGame instance;
+/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
+public class StealthAssassinGame extends ApplicationAdapter {
     private SpriteBatch batch;
-    private int playerScore;
-
-    private StealthAssassinGame() {
-    }
-
-    public static StealthAssassinGame getInstance() {
-        if (instance == null) {
-            instance = new StealthAssassinGame();
-        }
-        return instance;
-    }
+    private Texture image;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
-        playerScore = 0;
-        setScreen(new MainMenuScreen(this));
+        image = new Texture("libgdx.png");
     }
 
     @Override
     public void render() {
-        super.render();
+        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+        batch.begin();
+        batch.draw(image, 140, 210);
+        batch.end();
     }
 
     @Override
     public void dispose() {
         batch.dispose();
+        image.dispose();
     }
-
-    public SpriteBatch getBatch() { return batch; }
-    public int getPlayerScore() { return playerScore; }
-    public void addScore(int points) { this.playerScore += points; }
-    public void resetScore() { this.playerScore = 0; }
 }
