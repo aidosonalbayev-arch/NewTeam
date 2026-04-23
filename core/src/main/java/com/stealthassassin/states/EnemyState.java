@@ -1,4 +1,4 @@
-﻿package com.stealthassassin.states;
+package com.stealthassassin.states;
 
 import com.stealthassassin.entities.enemies.Enemy;
 
