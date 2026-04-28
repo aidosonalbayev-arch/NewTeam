@@ -8,11 +8,15 @@ public class ChaseState implements EnemyState {
     private Vector2 targetPosition;
 
     public ChaseState(Vector2 targetPosition) {
-        this.targetPosition = targetPosition;
+        this.targetPosition = new Vector2(targetPosition);
     }
 
     @Override
     public void handle(Enemy enemy, float delta) {
+        if (enemy.isAggressive() && enemy.getLastKnownTargetPosition() != null) {
+            targetPosition.set(enemy.getLastKnownTargetPosition());
+        }
+
         Vector2 direction = new Vector2(targetPosition).sub(enemy.getPosition()).nor();
         enemy.getPosition().add(direction.scl(enemy.getSpeed() * 1.5f * delta));
 
