@@ -292,6 +292,8 @@ public class GameScreen implements Screen {
 
             if (closestEnemy != null) {
                 boolean wasUndetected = !(closestEnemy.getState() instanceof ChaseState);
+                closestEnemy.rememberTarget(hero);
+
                 closestEnemy.takeDamage(hero.getDamage());
                 attackEffectTimer = 0.3f;
 
