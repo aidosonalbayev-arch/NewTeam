@@ -1,8 +1,10 @@
 package com.stealthassassin.entities.enemies;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.stealthassassin.entities.Entity;
 import com.stealthassassin.entities.heroes.Hero;
+import com.stealthassassin.states.ChaseState;
 import com.stealthassassin.states.EnemyState;
 import com.stealthassassin.states.PatrolState;
 
@@ -14,6 +16,10 @@ public abstract class Enemy extends Entity implements Cloneable {
     protected EnemyState currentState;
     protected float attackCooldown = 0;
     protected float attackRange = 50f;
+
+    protected Vector2 lastKnownTargetPosition;
+    protected float aggroTimer = 0;
+    protected static final float AGGRO_DURATION = 10f;
 
     public Enemy(float x, float y, float health, float speed,
                  float detectionRadius, float damage, String enemyType) {
@@ -31,6 +37,28 @@ public abstract class Enemy extends Entity implements Cloneable {
         }
         if (attackCooldown > 0) {
             attackCooldown -= delta;
+        }
+        // ZHANA: agressıá taımerı
+        if (aggroTimer > 0) {
+            aggroTimer -= delta;
+        }
+    }
+
+    @Override
+    public void takeDamage(float damage) {
+        super.takeDamage(damage);
+        if (alive && lastKnownTargetPosition != null) {
+            this.aggroTimer = AGGRO_DURATION;
+            setState(new ChaseState(lastKnownTargetPosition));
+            System.out.println(enemyType + " bayqap ardynan ketýde!");
+        }
+    }
+
+    public void rememberTarget(Hero hero) {
+        if (lastKnownTargetPosition == null) {
+            lastKnownTargetPosition = new Vector2(hero.getPosition());
+        } else {
+            lastKnownTargetPosition.set(hero.getPosition());
         }
     }
 
@@ -68,4 +96,7 @@ public abstract class Enemy extends Entity implements Cloneable {
     public String getEnemyType() { return enemyType; }
     public float getAttackRange() { return attackRange; }
     public boolean canAttack() { return attackCooldown <= 0; }
+
+    public Vector2 getLastKnownTargetPosition() { return lastKnownTargetPosition; }
+    public boolean isAggressive() { return aggroTimer > 0; }
 }
