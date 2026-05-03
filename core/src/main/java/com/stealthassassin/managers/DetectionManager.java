@@ -1,11 +1,11 @@
 package com.stealthassassin.managers;
 
+import java.util.List;
+
 import com.stealthassassin.entities.enemies.Enemy;
 import com.stealthassassin.entities.heroes.Hero;
 import com.stealthassassin.states.ChaseState;
 import com.stealthassassin.states.SearchState;
-
-import java.util.List;
 
 public class DetectionManager {
 
@@ -28,7 +28,6 @@ public class DetectionManager {
                 enemy.rememberTarget(hero);
                 if (!(enemy.getState() instanceof ChaseState)) {
                     enemy.setState(new ChaseState(hero.getPosition()));
-                    System.out.println(enemy.getEnemyType() + " qaharmandy bayqady!");
                 }
             } else if (distance < effectiveRadius * 1.5f
                 && enemy.getState() instanceof ChaseState
