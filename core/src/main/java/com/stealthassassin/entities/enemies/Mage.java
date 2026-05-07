@@ -12,7 +12,6 @@ public class Mage extends Enemy {
     public void castSpell() {
         if (manaPool >= 20f) {
             manaPool -= 20f;
-            System.out.println("Mage sıqyr okıdy!");
         }
     }
 

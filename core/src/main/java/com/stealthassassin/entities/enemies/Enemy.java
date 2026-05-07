@@ -50,7 +50,6 @@ public abstract class Enemy extends Entity implements Cloneable {
         if (alive && lastKnownTargetPosition != null) {
             this.aggroTimer = AGGRO_DURATION;
             setState(new ChaseState(lastKnownTargetPosition));
-            System.out.println(enemyType + " bayqap ardynan ketýde!");
         }
     }
 

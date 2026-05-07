@@ -54,7 +54,7 @@ public class HeroSelectionScreen implements Screen {
         "The most hidden hero.\nInvisibility ability - enemies cannot see (5 s).",
         "Strong and powerful warrior.\nIron Skin ability - +50 max HP."
     };
-    private final int[] heroHP = {80, 60, 120};
+    private final int[] heroHP = {250, 150, 200};
     private final int[] heroSpeed = {200, 180, 150};
     private final float[] heroStealth = {0.9f, 1.0f, 0.7f};
     private final int[] heroDamage = {30, 25, 45};
@@ -219,13 +219,13 @@ public class HeroSelectionScreen implements Screen {
         batch.end();
 
         batch.begin();
-        // Kóleńke
+
         titleFont.setColor(0, 0, 0, 0.9f);
         titleFont.draw(batch, "CHOOSE YOUR ASSASSIN", 278, 658);
-        // Qyzyl glıtch
+
         titleFont.setColor(1f, 0.1f, 0.1f, 0.4f);
         titleFont.draw(batch, "CHOOSE YOUR ASSASSIN", 275, 663);
-        // Negızgı
+
         titleFont.setColor(0.95f, 0.95f, 0.95f, 1f);
         titleFont.draw(batch, "CHOOSE YOUR ASSASSIN", 280, 660);
 
@@ -391,7 +391,7 @@ public class HeroSelectionScreen implements Screen {
         if (selected) {
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(cardColor.r, cardColor.g, cardColor.b, 1f);
-            // 4 múıyste
+
             shapeRenderer.triangle(cardX, cardY, cardX + 15, cardY, cardX, cardY + 15);
             shapeRenderer.triangle(cardX + cardW, cardY, cardX + cardW - 15, cardY, cardX + cardW, cardY + 15);
             shapeRenderer.triangle(cardX, cardY + cardH, cardX + 15, cardY + cardH, cardX, cardY + cardH - 15);
@@ -401,12 +401,11 @@ public class HeroSelectionScreen implements Screen {
 
         batch.begin();
 
-        // Japon tag (ústınde)
         tagFont.setColor(cardColor.r * 1.2f, cardColor.g * 1.2f, cardColor.b * 1.2f, 0.9f);
         tagFont.getData().setScale(1.3f);
         tagFont.getData().setScale(0.9f);
 
-        // Qaharman aty (negızgı)
+
         nameFont.setColor(Color.WHITE);
         nameFont.getData().setScale(selected ? 2.3f : 2.0f);
         String name = heroNames[index];
@@ -450,19 +449,19 @@ public class HeroSelectionScreen implements Screen {
         statFont.getData().setScale(1.1f);
 
         statFont.setColor(0.8f, 0.8f, 0.85f, 1f);
-        statFont.draw(batch, "HP", cardX + 30, statY);
+        statFont.draw(batch, "HP", cardX + 30, statY + 10 );
         statFont.setColor(Color.WHITE);
-        statFont.draw(batch, String.valueOf(heroHP[index]), cardX + cardW - 55, statY);
+        statFont.draw(batch, String.valueOf(heroHP[index]), cardX + cardW - 55, statY + 10);
         batch.end();
         drawStatBar(cardX + 30, statY - 12, cardW - 60, 5,
-            heroHP[index] / 150f,
+            heroHP[index] / 250f,
             new Color(0.3f, 0.9f, 0.3f, 1f));
 
         batch.begin();
         statFont.setColor(0.8f, 0.8f, 0.85f, 1f);
-        statFont.draw(batch, "SPEED", cardX + 30, statY - 28);
+        statFont.draw(batch, "SPEED", cardX + 30, statY - 20);
         statFont.setColor(Color.WHITE);
-        statFont.draw(batch, String.valueOf(heroSpeed[index]), cardX + cardW - 65, statY - 28);
+        statFont.draw(batch, String.valueOf(heroSpeed[index]), cardX + cardW - 55, statY - 20);
         batch.end();
         drawStatBar(cardX + 30, statY - 40, cardW - 60, 5,
             heroSpeed[index] / 250f,
@@ -470,9 +469,9 @@ public class HeroSelectionScreen implements Screen {
 
         batch.begin();
         statFont.setColor(0.8f, 0.8f, 0.85f, 1f);
-        statFont.draw(batch, "STEALTH", cardX + 30, statY - 56);
+        statFont.draw(batch, "STEALTH", cardX + 30, statY - 50);
         statFont.setColor(Color.WHITE);
-        statFont.draw(batch, String.format("%.1f", heroStealth[index]), cardX + cardW - 55, statY - 56);
+        statFont.draw(batch, String.format("%.1f", heroStealth[index]), cardX + cardW - 55, statY - 50);
         batch.end();
         drawStatBar(cardX + 30, statY - 68, cardW - 60, 5,
             heroStealth[index] / 1.2f,
@@ -480,9 +479,9 @@ public class HeroSelectionScreen implements Screen {
 
         batch.begin();
         statFont.setColor(0.8f, 0.8f, 0.85f, 1f);
-        statFont.draw(batch, "DAMAGE", cardX + 30, statY - 84);
+        statFont.draw(batch, "DAMAGE", cardX + 30, statY - 80);
         statFont.setColor(Color.WHITE);
-        statFont.draw(batch, String.valueOf(heroDamage[index]), cardX + cardW - 55, statY - 84);
+        statFont.draw(batch, String.valueOf(heroDamage[index]), cardX + cardW - 55, statY - 80);
         batch.end();
         drawStatBar(cardX + 30, statY - 96, cardW - 60, 5,
             heroDamage[index] / 50f,

@@ -2,7 +2,7 @@ package com.stealthassassin.entities.heroes;
 
 public class Ninja extends Hero {
 
-    private boolean abilityUsed = false;  // <-- JAŃA: 1 ret qana qoldanuǵa bolady
+    private boolean abilityUsed = false; 
     private float abilityTimer = 0;
 
     public Ninja(float x, float y) {
@@ -12,10 +12,8 @@ public class Ninja extends Hero {
     @Override
     public void specialAbility() {
         if (abilityUsed) {
-            System.out.println("Shadow Strike ázır daıyn emes!");
             return;
         }
-        System.out.println(heroName + " Shadow Strike-tı qoldandy! Damage x2 - 5 sekund");
         this.damage *= 2;
         abilityUsed = true;
         abilityTimer = 5f;
@@ -27,9 +25,8 @@ public class Ninja extends Hero {
         if (abilityUsed) {
             abilityTimer -= delta;
             if (abilityTimer <= 0) {
-                this.damage /= 2;  // Qaıtarylady
+                this.damage /= 2; 
                 abilityUsed = false;
-                System.out.println("Shadow Strike aıaqtaldy");
             }
         }
     }

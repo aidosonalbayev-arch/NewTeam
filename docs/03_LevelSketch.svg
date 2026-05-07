@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" fill="#e74c3c" font-family="Arial Black" font-size="32" font-weight="bold">STEALTH ASSASSIN — LEVEL SKETCH</text>
+  <text x="700" y="68" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="16" font-style="italic">Hard Difficulty Layout (1280 x 720)</text>
+  <line x1="400" y1="80" x2="1000" y2="80" stroke="#e74c3c" stroke-width="2"/>
+
+  <!-- ==================== GAME MAP ==================== -->
+  <!-- Outer border (walls) -->
+  <rect x="100" y="120" width="1200" height="680" fill="#3a2a1a" stroke="#5a3a1a" stroke-width="3"/>
+
+  <!-- Wall texture (top) -->
+  <rect x="100" y="120" width="1200" height="40" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="1"/>
+  <line x1="200" y1="120" x2="200" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="350" y1="120" x2="350" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="500" y1="120" x2="500" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="650" y1="120" x2="650" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="800" y1="120" x2="800" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="950" y1="120" x2="950" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="1100" y1="120" x2="1100" y2="160" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="100" y1="140" x2="1300" y2="140" stroke="#3a2a1a" stroke-width="2"/>
+
+  <!-- Wall texture (bottom) -->
+  <rect x="100" y="760" width="1200" height="40" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="1"/>
+  <line x1="200" y1="760" x2="200" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="350" y1="760" x2="350" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="500" y1="760" x2="500" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="650" y1="760" x2="650" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="800" y1="760" x2="800" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="950" y1="760" x2="950" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="1100" y1="760" x2="1100" y2="800" stroke="#3a2a1a" stroke-width="2"/>
+  <line x1="100" y1="780" x2="1300" y2="780" stroke="#3a2a1a" stroke-width="2"/>
+
+  <!-- Wall texture (left) -->
+  <rect x="100" y="120" width="40" height="680" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="1"/>
+  <!-- Wall texture (right) -->
+  <rect x="1260" y="120" width="40" height="680" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="1"/>
+
+  <!-- ==================== FLOOR (stone tiles) ==================== -->
+  <rect x="140" y="160" width="1120" height="600" fill="#5a5048" stroke="#3a3028" stroke-width="1"/>
+
+  <!-- Stone tile pattern -->
+  <g stroke="#3a3028" stroke-width="1" fill="none">
+    <line x1="140" y1="220" x2="1260" y2="220"/>
+    <line x1="140" y1="280" x2="1260" y2="280"/>
+    <line x1="140" y1="340" x2="1260" y2="340"/>
+    <line x1="140" y1="400" x2="1260" y2="400"/>
+    <line x1="140" y1="460" x2="1260" y2="460"/>
+    <line x1="140" y1="520" x2="1260" y2="520"/>
+    <line x1="140" y1="580" x2="1260" y2="580"/>
+    <line x1="140" y1="640" x2="1260" y2="640"/>
+    <line x1="140" y1="700" x2="1260" y2="700"/>
+
+    <line x1="200" y1="160" x2="200" y2="760"/>
+    <line x1="280" y1="160" x2="280" y2="760"/>
+    <line x1="360" y1="160" x2="360" y2="760"/>
+    <line x1="440" y1="160" x2="440" y2="760"/>
+    <line x1="520" y1="160" x2="520" y2="760"/>
+    <line x1="600" y1="160" x2="600" y2="760"/>
+    <line x1="680" y1="160" x2="680" y2="760"/>
+    <line x1="760" y1="160" x2="760" y2="760"/>
+    <line x1="840" y1="160" x2="840" y2="760"/>
+    <line x1="920" y1="160" x2="920" y2="760"/>
+    <line x1="1000" y1="160" x2="1000" y2="760"/>
+    <line x1="1080" y1="160" x2="1080" y2="760"/>
+    <line x1="1160" y1="160" x2="1160" y2="760"/>
+  </g>
+
+  <!-- ==================== INNER OBSTACLES ==================== -->
+  <!-- Wall obstacle 1 -->
+  <rect x="380" y="320" width="100" height="40" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="2"/>
+  <text x="430" y="345" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="10" font-weight="bold">WALL</text>
+
+  <!-- Wall obstacle 2 (vertical) -->
+  <rect x="700" y="500" width="40" height="100" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="2"/>
+  <text x="720" y="555" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="10" font-weight="bold" transform="rotate(-90 720 555)">WALL</text>
+
+  <!-- Wall obstacle 3 -->
+  <rect x="980" y="320" width="80" height="80" fill="#5a3a1a" stroke="#3a2a1a" stroke-width="2"/>
+  <text x="1020" y="365" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="10" font-weight="bold">COVER</text>
+
+  <!-- ==================== HERO ==================== -->
+  <g>
+    <circle cx="200" cy="240" r="25" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
+    <text x="200" y="246" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">P</text>
+    <text x="200" y="290" text-anchor="middle" fill="#3498db" font-family="Arial Black" font-size="13" font-weight="bold">PLAYER</text>
+    <text x="200" y="305" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="10">Spawn point</text>
+  </g>
+
+  <!-- ==================== ENEMIES ==================== -->
+  <!-- Knight 1 -->
+  <g>
+    <rect x="380" y="370" width="40" height="40" fill="#7f8c8d" stroke="#aab1b3" stroke-width="2"/>
+    <text x="400" y="395" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">K</text>
+    <text x="400" y="430" text-anchor="middle" fill="#aab1b3" font-family="Arial Black" font-size="11" font-weight="bold">KNIGHT</text>
+    <!-- Detection radius -->
+    <circle cx="400" cy="390" r="180" fill="none" stroke="#f1c40f" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  </g>
+
+  <!-- Mage -->
+  <g>
+    <rect x="700" y="320" width="40" height="40" fill="#9b59b6" stroke="#bb8fce" stroke-width="2"/>
+    <text x="720" y="345" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">M</text>
+    <text x="720" y="380" text-anchor="middle" fill="#bb8fce" font-family="Arial Black" font-size="11" font-weight="bold">MAGE</text>
+    <circle cx="720" cy="340" r="280" fill="none" stroke="#f1c40f" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  </g>
+
+  <!-- Archer -->
+  <g>
+    <rect x="900" y="220" width="40" height="40" fill="#27ae60" stroke="#52be80" stroke-width="2"/>
+    <text x="920" y="245" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">A</text>
+    <text x="920" y="280" text-anchor="middle" fill="#52be80" font-family="Arial Black" font-size="11" font-weight="bold">ARCHER</text>
+    <circle cx="920" cy="240" r="250" fill="none" stroke="#f1c40f" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+  </g>
+
+  <!-- Knight 2 -->
+  <g>
+    <rect x="1000" y="570" width="40" height="40" fill="#7f8c8d" stroke="#aab1b3" stroke-width="2"/>
+    <text x="1020" y="595" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">K</text>
+    <text x="1020" y="630" text-anchor="middle" fill="#aab1b3" font-family="Arial Black" font-size="11" font-weight="bold">KNIGHT</text>
+    <circle cx="1020" cy="590" r="180" fill="none" stroke="#f1c40f" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  </g>
+
+  <!-- BOSS (center) -->
+  <g>
+    <rect x="640" y="430" width="60" height="60" fill="#c0392b" stroke="#ff5733" stroke-width="3"/>
+    <text x="670" y="465" text-anchor="middle" fill="white" font-family="Arial Black" font-size="22">B</text>
+    <text x="670" y="510" text-anchor="middle" fill="#ff5733" font-family="Arial Black" font-size="13" font-weight="bold">BOSS</text>
+    <circle cx="670" cy="460" r="400" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
+  </g>
+
+  <!-- ==================== PATROL ROUTES ==================== -->
+  <!-- Knight 1 patrol -->
+  <line x1="290" y1="395" x2="500" y2="395" stroke="#3498db" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+  <polygon points="290 395, 300 390, 300 400" fill="#3498db" opacity="0.6"/>
+  <polygon points="500 395, 490 390, 490 400" fill="#3498db" opacity="0.6"/>
+
+  <!-- Mage patrol -->
+  <line x1="640" y1="345" x2="800" y2="345" stroke="#3498db" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+
+  <!-- Archer patrol -->
+  <line x1="850" y1="245" x2="990" y2="245" stroke="#3498db" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+
+  <!-- ==================== INFO BOX ==================== -->
+  <g>
+    <rect x="160" y="600" width="220" height="140" rx="6" fill="#2c3e50" stroke="#3498db" stroke-width="2" opacity="0.95"/>
+    <text x="270" y="625" text-anchor="middle" fill="#3498db" font-family="Arial Black" font-size="13" font-weight="bold">LEVEL INFO</text>
+    <line x1="170" y1="635" x2="370" y2="635" stroke="#3498db" stroke-width="1"/>
+    <text x="175" y="654" fill="#ecf0f1" font-family="Arial" font-size="11">Difficulty: HARD</text>
+    <text x="175" y="672" fill="#ecf0f1" font-family="Arial" font-size="11">Map size: 1280 × 720 px</text>
+    <text x="175" y="690" fill="#ecf0f1" font-family="Arial" font-size="11">Total enemies: 5</text>
+    <text x="175" y="708" fill="#ecf0f1" font-family="Arial" font-size="11">Win: defeat all enemies</text>
+    <text x="175" y="726" fill="#ecf0f1" font-family="Arial" font-size="11">Lose: HP reaches 0</text>
+  </g>
+
+  <!-- ==================== LEGEND ==================== -->
+  <g>
+    <rect x="1100" y="600" width="180" height="140" rx="6" fill="#2c3e50" stroke="#7f8c8d" stroke-width="1" opacity="0.95"/>
+    <text x="1190" y="625" text-anchor="middle" fill="#ecf0f1" font-family="Arial Black" font-size="13" font-weight="bold">LEGEND</text>
+    <line x1="1110" y1="635" x2="1270" y2="635" stroke="#7f8c8d" stroke-width="1"/>
+
+    <circle cx="1120" cy="652" r="6" fill="#3498db"/>
+    <text x="1135" y="657" fill="#ecf0f1" font-family="Arial" font-size="11">Player (P)</text>
+
+    <rect x="1116" y="667" width="9" height="9" fill="#7f8c8d"/>
+    <text x="1135" y="676" fill="#ecf0f1" font-family="Arial" font-size="11">Knight (K)</text>
+
+    <rect x="1116" y="685" width="9" height="9" fill="#9b59b6"/>
+    <text x="1135" y="694" fill="#ecf0f1" font-family="Arial" font-size="11">Mage (M)</text>
+
+    <rect x="1116" y="703" width="9" height="9" fill="#27ae60"/>
+    <text x="1135" y="712" fill="#ecf0f1" font-family="Arial" font-size="11">Archer (A)</text>
+
+    <rect x="1116" y="721" width="9" height="9" fill="#c0392b"/>
+    <text x="1135" y="730" fill="#ecf0f1" font-family="Arial" font-size="11">Boss (B)</text>
+  </g>
+
+  <!-- Detection legend -->
+  <g>
+    <circle cx="900" cy="660" r="8" fill="none" stroke="#f1c40f" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="920" y="664" fill="#ecf0f1" font-family="Arial" font-size="11">Detection radius</text>
+
+    <line x1="893" y1="690" x2="912" y2="690" stroke="#3498db" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+    <text x="920" y="694" fill="#ecf0f1" font-family="Arial" font-size="11">Patrol route</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="700" y="850" text-anchor="middle" fill="#7f8c8d" font-family="Arial" font-size="14" font-style="italic">Tip: Use walls and obstacles for cover. Approach enemies from behind for stealth kills (+50 bonus pts)</text>
+  <text x="700" y="875" text-anchor="middle" fill="#95a5a6" font-family="Arial" font-size="12" font-style="italic">Easy mode (3 enemies): 2x Guard + 1x Archer (no Boss, no Knight, no Mage)</text>
+
+  <!-- Bottom info -->
+  <text x="700" y="970" text-anchor="middle" fill="#7f8c8d" font-family="Arial" font-size="11" font-style="italic">SDP Project • 2026 • Onalbaev Aidos, Seisembay Asylbek, Aruzhan Kuat</text>
+</svg>

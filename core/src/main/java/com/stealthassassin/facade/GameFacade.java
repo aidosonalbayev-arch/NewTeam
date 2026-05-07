@@ -47,9 +47,6 @@ public class GameFacade {
             .enableNightMode()
             .setFog(0.5f)
             .build();
-
-        System.out.println("Oıyn bastaldy! Qaharman: " + currentHero.getHeroName()
-            + ", Deńgeı: " + currentLevel.getLevelName());
     }
 
     public void onEnemyKilled(Enemy enemy) {

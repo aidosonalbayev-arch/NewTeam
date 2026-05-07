@@ -16,7 +16,6 @@ public class AttackState implements EnemyState {
     public void handle(Enemy enemy, float delta) {
         attackCooldown -= delta;
         if (attackCooldown <= 0) {
-            System.out.println(enemy.getEnemyType() + " shabuıl jasaıdy! Zalal: " + enemy.getDamage());
             attackCooldown = 1f;
         }
 

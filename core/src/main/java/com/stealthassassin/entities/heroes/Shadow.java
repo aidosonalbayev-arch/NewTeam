@@ -14,10 +14,8 @@ public class Shadow extends Hero {
     @Override
     public void specialAbility() {
         if (abilityUsed) {
-            System.out.println("Invisibility ázır daıyn emes!");
             return;
         }
-        System.out.println(heroName + " Invisibility-dı qosty! 5 sekund kórınbeıdı");
         this.stealthLevel = 2.0f;
         abilityUsed = true;
         abilityTimer = 5f;
@@ -31,7 +29,6 @@ public class Shadow extends Hero {
             if (abilityTimer <= 0) {
                 this.stealthLevel = originalStealth;
                 abilityUsed = false;
-                System.out.println("Invisibility aıaqtaldy");
             }
         }
     }

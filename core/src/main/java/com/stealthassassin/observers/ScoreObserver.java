@@ -10,10 +10,8 @@ public class ScoreObserver implements GameEventListener {
             String enemyType = (String) data;
             int points = calculatePoints(enemyType);
             StealthAssassinGame.getInstance().addScore(points);
-            System.out.println("Esep qosyldy: +" + points + " (" + enemyType + ")");
         } else if ("STEALTH_KILL".equals(eventType)) {
             StealthAssassinGame.getInstance().addScore(50);
-            System.out.println("Jasırın óltıru bonusy: +50");
         }
     }
 

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500" width="2000" height="1500">
+  <!-- Background -->
+  <rect width="2000" height="1500" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="1000" y="40" text-anchor="middle" fill="#e74c3c" font-family="Arial Black" font-size="32" font-weight="bold">STEALTH ASSASSIN — CLASS DIAGRAM</text>
+  <text x="1000" y="68" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="16" font-style="italic">10 GoF Design Patterns Visualization</text>
+  <line x1="500" y1="80" x2="1500" y2="80" stroke="#e74c3c" stroke-width="2"/>
+
+  <!-- Defs -->
+  <defs>
+    <marker id="arrow1" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <polygon points="0 0, 14 7, 0 14" fill="#3498db"/>
+    </marker>
+    <marker id="diamond" markerWidth="20" markerHeight="14" refX="14" refY="7" orient="auto">
+      <polygon points="0 7, 7 0, 14 7, 7 14" fill="#f39c12" stroke="#f39c12"/>
+    </marker>
+    <marker id="emptyDiamond" markerWidth="20" markerHeight="14" refX="14" refY="7" orient="auto">
+      <polygon points="0 7, 7 0, 14 7, 7 14" fill="none" stroke="#9b59b6" stroke-width="2"/>
+    </marker>
+    <marker id="emptyTriangle" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <polygon points="0 0, 14 7, 0 14" fill="#1a1a2e" stroke="#27ae60" stroke-width="2"/>
+    </marker>
+  </defs>
+
+  <!-- ==================== 1. SINGLETON: StealthAssassinGame ==================== -->
+  <g>
+    <rect x="850" y="110" width="300" height="130" rx="6" fill="#27ae60" stroke="#2ecc71" stroke-width="2"/>
+    <text x="1000" y="135" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Singleton»</text>
+    <text x="1000" y="158" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">StealthAssassinGame</text>
+    <line x1="860" y1="170" x2="1140" y2="170" stroke="white" stroke-width="1"/>
+    <text x="870" y="188" fill="white" font-family="Arial" font-size="11">- instance: StealthAssassinGame</text>
+    <text x="870" y="204" fill="white" font-family="Arial" font-size="11">- batch: SpriteBatch</text>
+    <text x="870" y="220" fill="white" font-family="Arial" font-size="11">- playerScore: int</text>
+    <line x1="860" y1="226" x2="1140" y2="226" stroke="white" stroke-width="1"/>
+    <text x="870" y="240" fill="white" font-family="Arial" font-size="11">+ getInstance(): StealthAssassinGame</text>
+  </g>
+
+  <!-- ==================== 2. FACADE: GameFacade ==================== -->
+  <g>
+    <rect x="850" y="290" width="300" height="135" rx="6" fill="#e67e22" stroke="#f39c12" stroke-width="2"/>
+    <text x="1000" y="315" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Facade»</text>
+    <text x="1000" y="338" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">GameFacade</text>
+    <line x1="860" y1="350" x2="1140" y2="350" stroke="white" stroke-width="1"/>
+    <text x="870" y="368" fill="white" font-family="Arial" font-size="11">- heroFactory: HeroFactory</text>
+    <text x="870" y="384" fill="white" font-family="Arial" font-size="11">- enemyFactory: EnemyFactory</text>
+    <text x="870" y="400" fill="white" font-family="Arial" font-size="11">- eventManager: GameEventManager</text>
+    <line x1="860" y1="406" x2="1140" y2="406" stroke="white" stroke-width="1"/>
+    <text x="870" y="420" fill="white" font-family="Arial" font-size="11">+ startNewGame(heroType, difficulty)</text>
+  </g>
+
+  <!-- Singleton ↔ Facade связь -->
+  <line x1="1000" y1="240" x2="1000" y2="290" stroke="#3498db" stroke-width="2" marker-end="url(#arrow1)"/>
+
+  <!-- ==================== 3. FACTORY METHOD: HeroFactory ==================== -->
+  <g>
+    <rect x="450" y="290" width="280" height="115" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+    <text x="590" y="315" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Factory Method»</text>
+    <text x="590" y="338" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">HeroFactory</text>
+    <line x1="460" y1="350" x2="720" y2="350" stroke="white" stroke-width="1"/>
+    <text x="470" y="368" fill="white" font-family="Arial" font-size="11">+ enum HeroType:</text>
+    <text x="490" y="384" fill="white" font-family="Arial" font-size="10">NINJA, SHADOW, ROGUE</text>
+    <line x1="460" y1="392" x2="720" y2="392" stroke="white" stroke-width="1"/>
+    <text x="470" y="402" fill="white" font-family="Arial" font-size="11">+ createHero(type, x, y): Hero</text>
+  </g>
+
+  <!-- ==================== 4. FACTORY METHOD: EnemyFactory ==================== -->
+  <g>
+    <rect x="1270" y="290" width="280" height="135" rx="6" fill="#2980b9" stroke="#3498db" stroke-width="2"/>
+    <text x="1410" y="315" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Factory Method»</text>
+    <text x="1410" y="338" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">EnemyFactory</text>
+    <line x1="1280" y1="350" x2="1540" y2="350" stroke="white" stroke-width="1"/>
+    <text x="1290" y="368" fill="white" font-family="Arial" font-size="11">+ enum EnemyType:</text>
+    <text x="1310" y="383" fill="white" font-family="Arial" font-size="10">GUARD, ARCHER, KNIGHT,</text>
+    <text x="1310" y="396" fill="white" font-family="Arial" font-size="10">MAGE, BOSS</text>
+    <line x1="1280" y1="402" x2="1540" y2="402" stroke="white" stroke-width="1"/>
+    <text x="1290" y="416" fill="white" font-family="Arial" font-size="11">+ createEnemy(type, x, y): Enemy</text>
+  </g>
+
+  <!-- Facade uses Factories -->
+  <line x1="850" y1="370" x2="730" y2="345" stroke="#9b59b6" stroke-width="2" marker-end="url(#emptyDiamond)"/>
+  <line x1="1150" y1="370" x2="1270" y2="350" stroke="#9b59b6" stroke-width="2" marker-end="url(#emptyDiamond)"/>
+
+  <!-- ==================== 5. ABSTRACT FACTORY ==================== -->
+  <g>
+    <rect x="1620" y="110" width="320" height="130" rx="6" fill="#16a085" stroke="#1abc9c" stroke-width="2"/>
+    <text x="1780" y="135" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Abstract Factory»</text>
+    <text x="1780" y="158" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">AbstractGameFactory</text>
+    <text x="1780" y="180" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">{abstract}</text>
+    <line x1="1630" y1="190" x2="1930" y2="190" stroke="white" stroke-width="1"/>
+    <text x="1640" y="208" fill="white" font-family="Arial" font-size="11">+ createEnemies(): List&lt;Enemy&gt;</text>
+    <text x="1640" y="223" fill="white" font-family="Arial" font-size="11">+ getEnemyCount(): int</text>
+    <text x="1640" y="238" fill="white" font-family="Arial" font-size="11">+ getDifficulty(): String</text>
+  </g>
+
+  <!-- Easy / Hard factories -->
+  <g>
+    <rect x="1450" y="290" width="160" height="80" rx="6" fill="#0e6655" stroke="#16a085" stroke-width="2"/>
+    <text x="1530" y="315" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13" font-weight="bold">EasyLevelFactory</text>
+    <line x1="1455" y1="325" x2="1605" y2="325" stroke="white" stroke-width="1"/>
+    <text x="1460" y="345" fill="white" font-family="Arial" font-size="10">+ createEnemies(): List</text>
+    <text x="1460" y="360" fill="white" font-family="Arial" font-size="10">3 enemies (Guard, Archer)</text>
+  </g>
+
+  <g>
+    <rect x="1780" y="290" width="160" height="80" rx="6" fill="#0e6655" stroke="#16a085" stroke-width="2"/>
+    <text x="1860" y="315" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13" font-weight="bold">HardLevelFactory</text>
+    <line x1="1785" y1="325" x2="1935" y2="325" stroke="white" stroke-width="1"/>
+    <text x="1790" y="345" fill="white" font-family="Arial" font-size="10">+ createEnemies(): List</text>
+    <text x="1790" y="360" fill="white" font-family="Arial" font-size="10">5 enemies (with Boss)</text>
+  </g>
+
+  <!-- Inheritance Easy/Hard -> AbstractGameFactory -->
+  <line x1="1530" y1="290" x2="1700" y2="240" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="1860" y1="290" x2="1840" y2="240" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+
+  <!-- ==================== 6. BUILDER ==================== -->
+  <g>
+    <rect x="60" y="290" width="280" height="135" rx="6" fill="#8e44ad" stroke="#9b59b6" stroke-width="2"/>
+    <text x="200" y="315" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Builder»</text>
+    <text x="200" y="338" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">LevelBuilder</text>
+    <line x1="70" y1="350" x2="330" y2="350" stroke="white" stroke-width="1"/>
+    <text x="80" y="368" fill="white" font-family="Arial" font-size="11">- level: Level</text>
+    <line x1="70" y1="376" x2="330" y2="376" stroke="white" stroke-width="1"/>
+    <text x="80" y="392" fill="white" font-family="Arial" font-size="11">+ setName(): LevelBuilder</text>
+    <text x="80" y="406" fill="white" font-family="Arial" font-size="11">+ addEnemies(): LevelBuilder</text>
+    <text x="80" y="420" fill="white" font-family="Arial" font-size="11">+ build(): Level</text>
+  </g>
+
+  <!-- ==================== 7. ENTITY (BASE) ==================== -->
+  <g>
+    <rect x="850" y="490" width="300" height="120" rx="6" fill="#34495e" stroke="#7f8c8d" stroke-width="2"/>
+    <text x="1000" y="515" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«abstract»</text>
+    <text x="1000" y="538" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">Entity</text>
+    <line x1="860" y1="550" x2="1140" y2="550" stroke="white" stroke-width="1"/>
+    <text x="870" y="568" fill="white" font-family="Arial" font-size="11"># position: Vector2</text>
+    <text x="870" y="584" fill="white" font-family="Arial" font-size="11"># health, speed: float</text>
+    <line x1="860" y1="592" x2="1140" y2="592" stroke="white" stroke-width="1"/>
+    <text x="870" y="606" fill="white" font-family="Arial" font-size="11">+ update(delta), render(batch)</text>
+  </g>
+
+  <!-- ==================== 8. HERO (abstract) ==================== -->
+  <g>
+    <rect x="450" y="660" width="280" height="130" rx="6" fill="#c0392b" stroke="#e74c3c" stroke-width="2"/>
+    <text x="590" y="685" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«abstract»</text>
+    <text x="590" y="708" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">Hero</text>
+    <line x1="460" y1="720" x2="720" y2="720" stroke="white" stroke-width="1"/>
+    <text x="470" y="738" fill="white" font-family="Arial" font-size="11"># stealthLevel: float</text>
+    <text x="470" y="754" fill="white" font-family="Arial" font-size="11"># maxHealth, damage: float</text>
+    <line x1="460" y1="762" x2="720" y2="762" stroke="white" stroke-width="1"/>
+    <text x="470" y="776" fill="white" font-family="Arial" font-size="11">+ specialAbility() {abstract}</text>
+  </g>
+
+  <!-- Hero subclasses -->
+  <g>
+    <rect x="200" y="850" width="160" height="65" rx="6" fill="#922b21" stroke="#c0392b" stroke-width="2"/>
+    <text x="280" y="872" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">Ninja</text>
+    <text x="280" y="892" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">Shadow Strike</text>
+    <text x="280" y="906" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:80 DMG:30</text>
+  </g>
+  <g>
+    <rect x="500" y="850" width="160" height="65" rx="6" fill="#922b21" stroke="#c0392b" stroke-width="2"/>
+    <text x="580" y="872" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">Shadow</text>
+    <text x="580" y="892" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">Invisibility</text>
+    <text x="580" y="906" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:60 DMG:25</text>
+  </g>
+  <g>
+    <rect x="800" y="850" width="160" height="65" rx="6" fill="#922b21" stroke="#c0392b" stroke-width="2"/>
+    <text x="880" y="872" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">Rogue</text>
+    <text x="880" y="892" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">Iron Skin</text>
+    <text x="880" y="906" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:120 DMG:45</text>
+  </g>
+
+  <!-- Inheritance Hero -->
+  <line x1="280" y1="850" x2="500" y2="790" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="580" y1="850" x2="590" y2="790" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="880" y1="850" x2="690" y2="790" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+
+  <line x1="590" y1="660" x2="900" y2="610" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+
+  <!-- ==================== 9. ENEMY (with Prototype) ==================== -->
+  <g>
+    <rect x="1270" y="660" width="320" height="155" rx="6" fill="#7d3c98" stroke="#9b59b6" stroke-width="2"/>
+    <text x="1430" y="685" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«abstract» «Prototype»</text>
+    <text x="1430" y="708" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">Enemy</text>
+    <text x="1430" y="725" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">implements Cloneable</text>
+    <line x1="1280" y1="735" x2="1580" y2="735" stroke="white" stroke-width="1"/>
+    <text x="1290" y="753" fill="white" font-family="Arial" font-size="11"># detectionRadius, damage: float</text>
+    <text x="1290" y="769" fill="white" font-family="Arial" font-size="11"># currentState: EnemyState</text>
+    <line x1="1280" y1="777" x2="1580" y2="777" stroke="white" stroke-width="1"/>
+    <text x="1290" y="791" fill="white" font-family="Arial" font-size="11">+ clone(): Enemy</text>
+    <text x="1290" y="806" fill="white" font-family="Arial" font-size="11">+ tryAttack(hero): boolean</text>
+  </g>
+
+  <!-- Enemy subclasses -->
+  <g>
+    <rect x="1130" y="870" width="130" height="55" rx="6" fill="#5b2c6f" stroke="#7d3c98" stroke-width="2"/>
+    <text x="1195" y="892" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">Guard</text>
+    <text x="1195" y="912" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:50 +10pts</text>
+  </g>
+  <g>
+    <rect x="1280" y="870" width="130" height="55" rx="6" fill="#5b2c6f" stroke="#7d3c98" stroke-width="2"/>
+    <text x="1345" y="892" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">Archer</text>
+    <text x="1345" y="912" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:40 +15pts</text>
+  </g>
+  <g>
+    <rect x="1430" y="870" width="130" height="55" rx="6" fill="#5b2c6f" stroke="#7d3c98" stroke-width="2"/>
+    <text x="1495" y="892" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">Knight</text>
+    <text x="1495" y="912" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:120 +25pts</text>
+  </g>
+  <g>
+    <rect x="1580" y="870" width="130" height="55" rx="6" fill="#5b2c6f" stroke="#7d3c98" stroke-width="2"/>
+    <text x="1645" y="892" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">Mage</text>
+    <text x="1645" y="912" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:60 +30pts</text>
+  </g>
+  <g>
+    <rect x="1730" y="870" width="130" height="55" rx="6" fill="#922b21" stroke="#e74c3c" stroke-width="2"/>
+    <text x="1795" y="892" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">Boss</text>
+    <text x="1795" y="912" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">HP:500 +100pts</text>
+  </g>
+
+  <!-- Inheritance Enemy -->
+  <line x1="1195" y1="870" x2="1320" y2="815" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="1345" y1="870" x2="1390" y2="815" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="1495" y1="870" x2="1430" y2="815" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="1645" y1="870" x2="1500" y2="815" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="1795" y1="870" x2="1560" y2="815" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+
+  <line x1="1430" y1="660" x2="1100" y2="610" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+
+  <!-- ==================== 10. STATE PATTERN ==================== -->
+  <g>
+    <rect x="1270" y="975" width="320" height="115" rx="6" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+    <text x="1430" y="1000" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«interface» «State»</text>
+    <text x="1430" y="1023" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">EnemyState</text>
+    <line x1="1280" y1="1035" x2="1580" y2="1035" stroke="white" stroke-width="1"/>
+    <text x="1290" y="1053" fill="white" font-family="Arial" font-size="11">+ handle(enemy, delta)</text>
+    <text x="1290" y="1069" fill="white" font-family="Arial" font-size="11">+ getStateName(): String</text>
+  </g>
+
+  <!-- States -->
+  <g>
+    <rect x="1130" y="1140" width="120" height="40" rx="4" fill="#117864" stroke="#1abc9c" stroke-width="2"/>
+    <text x="1190" y="1165" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">PatrolState</text>
+  </g>
+  <g>
+    <rect x="1270" y="1140" width="120" height="40" rx="4" fill="#117864" stroke="#1abc9c" stroke-width="2"/>
+    <text x="1330" y="1165" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">ChaseState</text>
+  </g>
+  <g>
+    <rect x="1410" y="1140" width="120" height="40" rx="4" fill="#117864" stroke="#1abc9c" stroke-width="2"/>
+    <text x="1470" y="1165" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">AttackState</text>
+  </g>
+  <g>
+    <rect x="1550" y="1140" width="120" height="40" rx="4" fill="#117864" stroke="#1abc9c" stroke-width="2"/>
+    <text x="1610" y="1165" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">SearchState</text>
+  </g>
+
+  <!-- States implements -->
+  <line x1="1190" y1="1140" x2="1340" y2="1090" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#emptyTriangle)"/>
+  <line x1="1330" y1="1140" x2="1400" y2="1090" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#emptyTriangle)"/>
+  <line x1="1470" y1="1140" x2="1450" y2="1090" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#emptyTriangle)"/>
+  <line x1="1610" y1="1140" x2="1520" y2="1090" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#emptyTriangle)"/>
+
+  <!-- Enemy → EnemyState (composition) -->
+  <line x1="1430" y1="815" x2="1430" y2="975" stroke="#f39c12" stroke-width="2" marker-end="url(#diamond)"/>
+
+  <!-- ==================== 11. OBSERVER PATTERN ==================== -->
+  <g>
+    <rect x="60" y="660" width="300" height="125" rx="6" fill="#d35400" stroke="#e67e22" stroke-width="2"/>
+    <text x="210" y="685" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Observer» «Singleton»</text>
+    <text x="210" y="708" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">GameEventManager</text>
+    <line x1="70" y1="720" x2="350" y2="720" stroke="white" stroke-width="1"/>
+    <text x="80" y="738" fill="white" font-family="Arial" font-size="11">- listeners: List&lt;GameEventListener&gt;</text>
+    <line x1="70" y1="746" x2="350" y2="746" stroke="white" stroke-width="1"/>
+    <text x="80" y="760" fill="white" font-family="Arial" font-size="11">+ subscribe(listener)</text>
+    <text x="80" y="776" fill="white" font-family="Arial" font-size="11">+ notify(eventType, data)</text>
+  </g>
+
+  <g>
+    <rect x="60" y="830" width="180" height="60" rx="6" fill="#a04000" stroke="#d35400" stroke-width="2"/>
+    <text x="150" y="853" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«interface»</text>
+    <text x="150" y="876" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">GameEventListener</text>
+  </g>
+
+  <g>
+    <rect x="270" y="830" width="180" height="60" rx="6" fill="#a04000" stroke="#d35400" stroke-width="2"/>
+    <text x="360" y="855" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">ScoreObserver</text>
+    <text x="360" y="878" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="11">on ENEMY_KILLED</text>
+  </g>
+
+  <line x1="360" y1="830" x2="220" y2="785" stroke="#f39c12" stroke-width="2" marker-end="url(#diamond)"/>
+  <line x1="360" y1="830" x2="180" y2="890" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#emptyTriangle)"/>
+
+  <!-- ==================== 12. DECORATOR PATTERN ==================== -->
+  <g>
+    <rect x="60" y="975" width="300" height="115" rx="6" fill="#1f618d" stroke="#2e86c1" stroke-width="2"/>
+    <text x="210" y="1000" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Decorator» «abstract»</text>
+    <text x="210" y="1023" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">HeroDecorator</text>
+    <line x1="70" y1="1035" x2="350" y2="1035" stroke="white" stroke-width="1"/>
+    <text x="80" y="1053" fill="white" font-family="Arial" font-size="11"># decoratedHero: Hero</text>
+    <line x1="70" y1="1060" x2="350" y2="1060" stroke="white" stroke-width="1"/>
+    <text x="80" y="1078" fill="white" font-family="Arial" font-size="11">extends Hero</text>
+  </g>
+
+  <!-- 3 decorators -->
+  <g>
+    <rect x="40" y="1140" width="140" height="50" rx="4" fill="#154360" stroke="#1f618d" stroke-width="2"/>
+    <text x="110" y="1163" text-anchor="middle" fill="white" font-family="Arial Black" font-size="11">DamageBoost</text>
+    <text x="110" y="1180" text-anchor="middle" fill="white" font-family="Arial" font-size="9">Decorator</text>
+  </g>
+  <g>
+    <rect x="195" y="1140" width="140" height="50" rx="4" fill="#154360" stroke="#1f618d" stroke-width="2"/>
+    <text x="265" y="1163" text-anchor="middle" fill="white" font-family="Arial Black" font-size="11">SpeedBoost</text>
+    <text x="265" y="1180" text-anchor="middle" fill="white" font-family="Arial" font-size="9">Decorator</text>
+  </g>
+  <g>
+    <rect x="350" y="1140" width="140" height="50" rx="4" fill="#154360" stroke="#1f618d" stroke-width="2"/>
+    <text x="420" y="1163" text-anchor="middle" fill="white" font-family="Arial Black" font-size="11">StealthBoost</text>
+    <text x="420" y="1180" text-anchor="middle" fill="white" font-family="Arial" font-size="9">Decorator</text>
+  </g>
+
+  <line x1="110" y1="1140" x2="170" y2="1090" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="265" y1="1140" x2="220" y2="1090" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+  <line x1="420" y1="1140" x2="270" y2="1090" stroke="#27ae60" stroke-width="2" marker-end="url(#emptyTriangle)"/>
+
+  <line x1="210" y1="975" x2="500" y2="790" stroke="#f39c12" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#diamond)"/>
+
+  <!-- ==================== 13. OBJECT POOL ==================== -->
+  <g>
+    <rect x="780" y="975" width="280" height="120" rx="6" fill="#7b241c" stroke="#a93226" stroke-width="2"/>
+    <text x="920" y="1000" text-anchor="middle" fill="white" font-family="Arial" font-size="11" font-style="italic">«Object Pool» «Singleton»</text>
+    <text x="920" y="1023" text-anchor="middle" fill="white" font-family="Arial Black" font-size="16" font-weight="bold">BulletPool</text>
+    <line x1="790" y1="1035" x2="1050" y2="1035" stroke="white" stroke-width="1"/>
+    <text x="800" y="1053" fill="white" font-family="Arial" font-size="11">extends Pool&lt;Bullet&gt;</text>
+    <line x1="790" y1="1060" x2="1050" y2="1060" stroke="white" stroke-width="1"/>
+    <text x="800" y="1078" fill="white" font-family="Arial" font-size="11">+ obtain(): Bullet — reuse</text>
+  </g>
+
+  <g>
+    <rect x="800" y="1140" width="200" height="60" rx="6" fill="#5d1a16" stroke="#7b241c" stroke-width="2"/>
+    <text x="900" y="1165" text-anchor="middle" fill="white" font-family="Arial Black" font-size="14">Bullet</text>
+    <text x="900" y="1185" text-anchor="middle" fill="#fef9e7" font-family="Arial" font-size="10">implements Poolable</text>
+  </g>
+
+  <line x1="900" y1="1140" x2="900" y2="1095" stroke="#f39c12" stroke-width="2" marker-end="url(#diamond)"/>
+
+  <!-- ==================== 14. SCREENS ==================== -->
+  <g>
+    <rect x="650" y="1230" width="700" height="200" rx="6" fill="#283747" stroke="#566573" stroke-width="2"/>
+    <text x="1000" y="1258" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="14" font-weight="bold">SCREENS (libGDX Screen interface)</text>
+    <line x1="660" y1="1268" x2="1340" y2="1268" stroke="#aed6f1" stroke-width="1"/>
+
+    <rect x="680" y="1290" width="150" height="60" rx="4" fill="#1b4f72" stroke="#2874a6" stroke-width="1.5"/>
+    <text x="755" y="1313" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">MainMenu</text>
+    <text x="755" y="1335" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="10">Screen</text>
+
+    <rect x="850" y="1290" width="150" height="60" rx="4" fill="#1b4f72" stroke="#2874a6" stroke-width="1.5"/>
+    <text x="925" y="1313" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">HeroSelection</text>
+    <text x="925" y="1335" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="10">Screen</text>
+
+    <rect x="1020" y="1290" width="150" height="60" rx="4" fill="#1b4f72" stroke="#2874a6" stroke-width="1.5"/>
+    <text x="1095" y="1313" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">Game</text>
+    <text x="1095" y="1335" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="10">Screen</text>
+
+    <rect x="1190" y="1290" width="150" height="60" rx="4" fill="#1b4f72" stroke="#2874a6" stroke-width="1.5"/>
+    <text x="1265" y="1313" text-anchor="middle" fill="white" font-family="Arial Black" font-size="13">GameOver</text>
+    <text x="1265" y="1335" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="10">Screen</text>
+
+    <text x="1000" y="1390" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="11">Managed by StealthAssassinGame.setScreen() (Game lifecycle)</text>
+    <text x="1000" y="1410" text-anchor="middle" fill="#aed6f1" font-family="Arial" font-size="11">All screens use SpriteBatch + ShapeRenderer for rendering</text>
+  </g>
+
+  <!-- ==================== LEGEND ==================== -->
+  <g>
+    <rect x="40" y="1230" width="500" height="240" rx="6" fill="#1c2833" stroke="#566573" stroke-width="1"/>
+    <text x="60" y="1258" fill="#ecf0f1" font-family="Arial Black" font-size="14" font-weight="bold">LEGEND</text>
+    <line x1="60" y1="1268" x2="525" y2="1268" stroke="#566573" stroke-width="1"/>
+
+    <line x1="60" y1="1290" x2="100" y2="1290" stroke="#27ae60" stroke-width="2"/>
+    <polygon points="100 1283, 114 1290, 100 1297" fill="#1a1a2e" stroke="#27ae60" stroke-width="2"/>
+    <text x="125" y="1294" fill="#ecf0f1" font-family="Arial" font-size="12">Inheritance (extends)</text>
+
+    <line x1="60" y1="1315" x2="100" y2="1315" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5"/>
+    <polygon points="100 1308, 114 1315, 100 1322" fill="#1a1a2e" stroke="#27ae60" stroke-width="2"/>
+    <text x="125" y="1319" fill="#ecf0f1" font-family="Arial" font-size="12">Implementation (implements interface)</text>
+
+    <line x1="60" y1="1340" x2="100" y2="1340" stroke="#f39c12" stroke-width="2"/>
+    <polygon points="100 1333, 107 1340, 100 1347, 93 1340" fill="#f39c12"/>
+    <text x="125" y="1344" fill="#ecf0f1" font-family="Arial" font-size="12">Composition (strong "has-a")</text>
+
+    <line x1="60" y1="1365" x2="100" y2="1365" stroke="#9b59b6" stroke-width="2"/>
+    <polygon points="100 1358, 107 1365, 100 1372, 93 1365" fill="none" stroke="#9b59b6" stroke-width="2"/>
+    <text x="125" y="1369" fill="#ecf0f1" font-family="Arial" font-size="12">Aggregation (weak "has-a")</text>
+
+    <line x1="60" y1="1390" x2="100" y2="1390" stroke="#3498db" stroke-width="2"/>
+    <polygon points="86 1383, 100 1390, 86 1397" fill="#3498db"/>
+    <text x="125" y="1394" fill="#ecf0f1" font-family="Arial" font-size="12">Dependency (uses)</text>
+
+    <text x="60" y="1425" fill="#e74c3c" font-family="Arial" font-size="12" font-weight="bold">10 Patterns Used:</text>
+    <text x="60" y="1445" fill="#ecf0f1" font-family="Arial" font-size="11">Singleton • Factory Method • Abstract Factory • Builder • Prototype</text>
+    <text x="60" y="1462" fill="#ecf0f1" font-family="Arial" font-size="11">Object Pool • Decorator • Facade • State • Observer</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="1000" y="1490" text-anchor="middle" fill="#7f8c8d" font-family="Arial" font-size="11" font-style="italic">SDP Project • 2026 • Onalbaev Aidos, Seisembay Asylbek, Aruzhan Kuat</text>
+</svg>

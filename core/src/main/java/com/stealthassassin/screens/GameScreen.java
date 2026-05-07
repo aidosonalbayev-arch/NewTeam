@@ -1,5 +1,9 @@
 package com.stealthassassin.screens;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -19,10 +23,6 @@ import com.stealthassassin.managers.InputManager;
 import com.stealthassassin.map.GameMap;
 import com.stealthassassin.states.ChaseState;
 import com.stealthassassin.utils.TextureGenerator;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class GameScreen implements Screen {
 
@@ -106,9 +106,6 @@ public class GameScreen implements Screen {
                 if (distanceToHero < 60f) {
                     if (enemy.tryAttack(hero)) {
                         hurtEffectTimer = 0.4f;
-                        System.out.println(enemy.getEnemyType() + " shabýyldady! -"
-                            + (int) enemy.getDamage() + " HP. Qalǵany: "
-                            + (int) hero.getHealth());
                     }
                 }
             }
