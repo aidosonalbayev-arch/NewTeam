@@ -10,7 +10,7 @@ public class StealthAssassinGame extends Game {
     private SpriteBatch batch;
     private int playerScore;
 
-    public StealthAssassinGame() {
+    private StealthAssassinGame() {
     }
 
     public static StealthAssassinGame getInstance() {
