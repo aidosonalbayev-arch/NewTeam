@@ -208,7 +208,7 @@ public class GameScreen implements Screen {
             case "Archer": return 40f;
             case "Knight": return 120f;
             case "Mage":   return 60f;
-            case "Boss":   return 500f;
+            case "Boss":   return 300f;
             default:       return 100f;
         }
     }
