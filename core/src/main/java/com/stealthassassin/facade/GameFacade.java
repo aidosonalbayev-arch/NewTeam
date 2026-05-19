@@ -40,8 +40,7 @@ public class GameFacade {
         }
 
         currentLevel = new LevelBuilder()
-            .setName("Level 1 - " + difficulty)
-            .setMap("maps/level1.tmx")
+            .setName("Level - " + difficulty)
             .addEnemies(levelFactory.createEnemies())
             .setDifficulty(levelFactory.getDifficulty().equals("HARD") ? 3 : 1)
             .enableNightMode()
