@@ -10,6 +10,6 @@ public class Lwjgl3Launcher {
         config.setTitle("Stealth Assassin");
         config.setWindowedMode(1280, 720);
         config.setForegroundFPS(60);
-        new Lwjgl3Application(new StealthAssassinGame(), config);
+        new Lwjgl3Application(StealthAssassinGame.getInstance(), config);
     }
 }
