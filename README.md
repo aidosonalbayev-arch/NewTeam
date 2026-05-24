@@ -49,7 +49,7 @@ Tagline: Shadows Never Forgive
 | **Archer** | 40  | 20     | 250 px    | +15   | Long range   |
 | **Knight** | 120 | 30     | 180 px    | +25   | 30% armor    |
 | **Mage**   | 60  | 35     | 280 px    | +30   | Magic attack |
-| **Boss**   | 500 | 60     | 400 px    | +100  | Multi-phase  |
+| **Boss**   | 300 | 60     | 400 px    | +100  | Multi-phase  |
 
 ---
 
